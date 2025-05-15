@@ -96,11 +96,11 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     else:
         welcome_message = """🚀 Welcome to the Bot!
 
-⚠️ WARNING: 18+ Content
+⚠️ WARNING: Content
 
 🔞 This bot provides exclusive content for adults only. By continuing, you confirm that you are 18 or older.
 
-📌 Join now: [Click Here](https://t.me/+kXvrn_nYWJ8wNTk1)"""
+📌 Join now: [Click Here]"""
         await update.message.reply_text(welcome_message, parse_mode="Markdown", disable_web_page_preview=True)
 
 async def handle_media(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
@@ -136,7 +136,7 @@ async def handle_media(update: Update, context: ContextTypes.DEFAULT_TYPE) -> No
         encoded_link = encode_payload(f"get-media-{unique_id}")
         link = f"https://t.me/{bot_user.username}?start={encoded_link}"
 
-        media_indicator = f"📸 pic {unique_id}" if file_type == "photo" else f"🎥 mms {unique_id}"
+        media_indicator = f"📸 pic {unique_id}" if file_type == "photo" else f"🎥 video {ideunique_id}"
         cooked_message = f"🔥 Cooked meth:\n\n{media_indicator}\n\n🔗 LINK: {link}"
 
         await update.message.reply_text(cooked_message, parse_mode="Markdown")
